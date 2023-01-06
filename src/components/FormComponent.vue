@@ -1,0 +1,48 @@
+<template>
+  <div>
+    <form @submit.prevent="onSubmit" >
+      <template v-for="field in fields" v-bind:key="field.name" >
+        <label v-if="field.label">{{ field.label }}</label>
+        <input
+          v-if="field.type === 'text'"
+          v-bind:type="field.type"
+          v-bind:name="field.name"
+          v-bind:required="field.required"
+        />
+      </template>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</template>
+
+<script>
+
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      fields: [],
+    };
+  },
+  methods: {
+  async onSubmit() {
+    const data = this.fields.reduce((data, fields) => {
+        data[fields.name] = fields.value;
+        return data;
+      }, {});
+
+      try {
+        const response = await axios.post('/api/submit', data);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  },
+  async created() {
+    const config = await axios.get("/form-config.json");
+    this.fields = config.data;
+  },
+};
+</script>
