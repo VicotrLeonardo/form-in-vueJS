@@ -1,5 +1,4 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" style="width: 90px">
   <router-view/>
 </template>
 
