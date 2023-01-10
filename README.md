@@ -1,24 +1,15 @@
-# full-stack-vue
+## instalar as dependências
 
-## Project setup
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+yarn
 ```
 
-### Compiles and minifies for production
+### Inicializar o Projeto
+
 ```
-yarn build
+yarn start
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+### IMPORTANTE
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Checar/Configurar o endereço do servidor/api dentro do arquivo ./src/main.js .

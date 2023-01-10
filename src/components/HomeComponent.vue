@@ -1,12 +1,12 @@
 <template>
       <HeaderComponent title="Formulário Dinâmico" />
     <div class="menu-home mt-2">
-      <FormComponent />
+      <MenuComponent />
     </div>
 </template>
   
   <script>
-import FormComponent from './FormComponent.vue';
+import MenuComponent from './MenuComponent.vue';
 import HeaderComponent from './HeaderComponent.vue';
 
   export default {
@@ -21,7 +21,7 @@ import HeaderComponent from './HeaderComponent.vue';
     },
     components: { 
       HeaderComponent,
-      FormComponent }
+      MenuComponent }
 }
   </script>
   
